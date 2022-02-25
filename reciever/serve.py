@@ -7,7 +7,7 @@ app = Flask(__name__)
 @app.route('/', methods=['POST'])
 @cross_origin()
 def log_info():
-    with open('../info.txt', 'ab+') as f:
+    with open('../sample.txt', 'ab+') as f:
         f.write(request.data)
         f.write(b"\n")
         f.flush()
