@@ -4,10 +4,10 @@ class MsgTunnel(object):
 
     def pop_msg(self):
         if len(self._queue) > 0:
-            return self._queue.pop()
+            return self._queue.pop(0)
         while True:
             if len(self._queue) > 0:
-                return self._queue.pop()
+                return self._queue.pop(0)
 
     def push_msg(self, msg):
         self._queue.append(msg)
